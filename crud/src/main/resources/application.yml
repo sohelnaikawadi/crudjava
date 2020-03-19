@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      host: 172.23.0.2
+      port: 27017
+      database: crudmongo
+      username: root
+      password: example
+      authentication-database: admin
+
+logging:
+  file:
+    name: mylog.log
+    path: /mylogs/mylog.log
+#  file:
+#    max-history: 7
+#

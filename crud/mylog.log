@@ -1,0 +1,448 @@
+2020-03-16 09:13:35.303  INFO 49534 --- [main] reactivespring.crud.CrudApplication      : Starting CrudApplication on PU-SNAIKAWADI with PID 49534 (/Users/sohel.naikawadi/Downloads/CrudDocker/crud/build/classes/java/main started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:13:35.325  INFO 49534 --- [main] reactivespring.crud.CrudApplication      : No active profile set, falling back to default profiles: default
+2020-03-16 09:13:35.741  INFO 49534 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:13:35.784  INFO 49534 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:13:35.789  INFO 49534 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:13:35.791  INFO 49534 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:13:36.103  INFO 49534 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:13:36.204  INFO 49534 --- [cluster-ClusterId{value='5e6fa5b02c591d0e64b543e2', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:410) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:385) ~[mongodb-driver-core-3.11.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /172.23.0.2:27017
+Caused by: java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[na:1.8.0_241]
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717) ~[na:1.8.0_241]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+
+2020-03-16 09:13:36.257  INFO 49534 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:13:36.257  INFO 49534 --- [main] org.mongodb.driver.cluster               : Adding discovered server 172.23.0.2:27017 to client view of cluster
+2020-03-16 09:13:36.268  INFO 49534 --- [cluster-ClusterId{value='5e6fa5b02c591d0e64b543e3', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.11.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_241]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_241]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_241]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_241]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_241]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_241]
+	at java.net.Socket.connect(Socket.java:606) ~[na:1.8.0_241]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar:na]
+	... 3 common frames omitted
+
+2020-03-16 09:13:36.781  INFO 49534 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2020-03-16 09:13:36.783  INFO 49534 --- [main] reactivespring.crud.CrudApplication      : Started CrudApplication in 1.864 seconds (JVM running for 2.36)
+2020-03-16 09:14:57.213  INFO 49582 --- [main] reactivespring.crud.CrudApplication      : Starting CrudApplication on PU-SNAIKAWADI with PID 49582 (/Users/sohel.naikawadi/Downloads/CrudDocker/crud/build/classes/java/main started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:14:57.215  INFO 49582 --- [main] reactivespring.crud.CrudApplication      : No active profile set, falling back to default profiles: default
+2020-03-16 09:14:57.522  INFO 49582 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:14:57.552  INFO 49582 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:14:57.556  INFO 49582 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:14:57.557  INFO 49582 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:14:57.788  INFO 49582 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:14:57.908  INFO 49582 --- [cluster-ClusterId{value='5e6fa6017c99370d6ad7fe55', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:185}] to localhost:27017
+2020-03-16 09:14:57.914  INFO 49582 --- [cluster-ClusterId{value='5e6fa6017c99370d6ad7fe55', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4165814}
+2020-03-16 09:14:57.917  INFO 49582 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:14:57.917  INFO 49582 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2020-03-16 09:14:57.923  INFO 49582 --- [cluster-ClusterId{value='5e6fa6017c99370d6ad7fe56', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:186}] to localhost:27017
+2020-03-16 09:14:57.924  INFO 49582 --- [cluster-ClusterId{value='5e6fa6017c99370d6ad7fe56', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=550312}
+2020-03-16 09:14:57.924  INFO 49582 --- [cluster-ClusterId{value='5e6fa6017c99370d6ad7fe56', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-03-16 09:14:58.311  INFO 49582 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2020-03-16 09:14:58.314  INFO 49582 --- [main] reactivespring.crud.CrudApplication      : Started CrudApplication in 1.379 seconds (JVM running for 1.731)
+2020-03-16 09:22:46.668  INFO 49993 --- [Test worker] r.crud.CrudApplicationTests              : Starting CrudApplicationTests on PU-SNAIKAWADI with PID 49993 (started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:22:46.669  INFO 49993 --- [Test worker] r.crud.CrudApplicationTests              : No active profile set, falling back to default profiles: default
+2020-03-16 09:22:47.019  INFO 49993 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:22:47.113  INFO 49993 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:22:47.118  INFO 49993 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:22:47.120  INFO 49993 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:22:47.430  INFO 49993 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:22:47.577  INFO 49993 --- [cluster-ClusterId{value='5e6fa7d7b4ec3104f3b77886', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:187}] to localhost:27017
+2020-03-16 09:22:47.588  INFO 49993 --- [cluster-ClusterId{value='5e6fa7d7b4ec3104f3b77886', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=5620180}
+2020-03-16 09:22:47.664  INFO 49993 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:22:47.664  INFO 49993 --- [Test worker] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2020-03-16 09:22:47.679  INFO 49993 --- [cluster-ClusterId{value='5e6fa7d7b4ec3104f3b77887', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:188}] to localhost:27017
+2020-03-16 09:22:47.681  INFO 49993 --- [cluster-ClusterId{value='5e6fa7d7b4ec3104f3b77887', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=819441}
+2020-03-16 09:22:47.682  INFO 49993 --- [cluster-ClusterId{value='5e6fa7d7b4ec3104f3b77887', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-03-16 09:22:48.209  INFO 49993 --- [Test worker] r.crud.CrudApplicationTests              : Started CrudApplicationTests in 1.77 seconds (JVM running for 2.629)
+2020-03-16 09:23:26.118  INFO 50071 --- [Test worker] r.crud.CrudApplicationTests              : Starting CrudApplicationTests on PU-SNAIKAWADI with PID 50071 (started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:23:26.119  INFO 50071 --- [Test worker] r.crud.CrudApplicationTests              : No active profile set, falling back to default profiles: default
+2020-03-16 09:23:26.483  INFO 50071 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:23:26.569  INFO 50071 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:23:26.575  INFO 50071 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:23:26.577  INFO 50071 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:23:26.885  INFO 50071 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:23:27.027  INFO 50071 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:23:27.028  INFO 50071 --- [Test worker] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2020-03-16 09:23:27.034  INFO 50071 --- [cluster-ClusterId{value='5e6fa7fe81b22006baef635c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:189}] to localhost:27017
+2020-03-16 09:23:27.040  INFO 50071 --- [cluster-ClusterId{value='5e6fa7ff81b22006baef635d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:190}] to localhost:27017
+2020-03-16 09:23:27.042  INFO 50071 --- [cluster-ClusterId{value='5e6fa7ff81b22006baef635d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=677433}
+2020-03-16 09:23:27.042  INFO 50071 --- [cluster-ClusterId{value='5e6fa7fe81b22006baef635c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 3]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3904918}
+2020-03-16 09:23:27.043  INFO 50071 --- [cluster-ClusterId{value='5e6fa7ff81b22006baef635d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2020-03-16 09:23:27.536  INFO 50071 --- [Test worker] r.crud.CrudApplicationTests              : Started CrudApplicationTests in 1.646 seconds (JVM running for 2.372)
+2020-03-16 09:25:58.873  INFO 50234 --- [Test worker] r.crud.CrudApplicationTests              : Starting CrudApplicationTests on PU-SNAIKAWADI with PID 50234 (started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:25:58.875  INFO 50234 --- [Test worker] r.crud.CrudApplicationTests              : No active profile set, falling back to default profiles: default
+2020-03-16 09:25:59.232  INFO 50234 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:25:59.322  INFO 50234 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:25:59.327  INFO 50234 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:25:59.329  INFO 50234 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:25:59.637  INFO 50234 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:25:59.730  INFO 50234 --- [cluster-ClusterId{value='5e6fa897db0b2831ee3c96d1', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:410) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:385) ~[mongodb-driver-core-3.11.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /172.23.0.2:27017
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:820) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2020-03-16 09:25:59.781  INFO 50234 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:25:59.781  INFO 50234 --- [Test worker] org.mongodb.driver.cluster               : Adding discovered server 172.23.0.2:27017 to client view of cluster
+2020-03-16 09:25:59.794  INFO 50234 --- [cluster-ClusterId{value='5e6fa897db0b2831ee3c96d2', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.11.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:339) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:603) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar:na]
+	... 3 common frames omitted
+
+2020-03-16 09:26:00.294  INFO 50234 --- [Test worker] r.crud.CrudApplicationTests              : Started CrudApplicationTests in 1.643 seconds (JVM running for 2.374)
+2020-03-16 09:30:32.286  INFO 50466 --- [Test worker] r.crud.CrudApplicationTests              : Starting CrudApplicationTests on PU-SNAIKAWADI with PID 50466 (started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:30:32.288  INFO 50466 --- [Test worker] r.crud.CrudApplicationTests              : No active profile set, falling back to default profiles: default
+2020-03-16 09:30:32.692  INFO 50466 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:30:32.784  INFO 50466 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:30:32.790  INFO 50466 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:30:32.792  INFO 50466 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:30:33.093  INFO 50466 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:30:33.179  INFO 50466 --- [cluster-ClusterId{value='5e6fa9a906efda2025d8e35c', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:410) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:385) ~[mongodb-driver-core-3.11.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /172.23.0.2:27017
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:820) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2020-03-16 09:30:33.237  INFO 50466 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:30:33.238  INFO 50466 --- [Test worker] org.mongodb.driver.cluster               : Adding discovered server 172.23.0.2:27017 to client view of cluster
+2020-03-16 09:30:33.252  INFO 50466 --- [cluster-ClusterId{value='5e6fa9a906efda2025d8e35d', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.11.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:339) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:603) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar:na]
+	... 3 common frames omitted
+
+2020-03-16 09:30:33.781  INFO 50466 --- [Test worker] r.crud.CrudApplicationTests              : Started CrudApplicationTests in 1.776 seconds (JVM running for 2.499)
+2020-03-16 09:32:55.073  INFO 50628 --- [Test worker] r.crud.CrudApplicationTests              : Starting CrudApplicationTests on PU-SNAIKAWADI with PID 50628 (started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:32:55.074  INFO 50628 --- [Test worker] r.crud.CrudApplicationTests              : No active profile set, falling back to default profiles: default
+2020-03-16 09:32:55.416  INFO 50628 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:32:55.503  INFO 50628 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:32:55.508  INFO 50628 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:32:55.515  INFO 50628 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:32:55.811  INFO 50628 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:32:55.917  INFO 50628 --- [cluster-ClusterId{value='5e6faa375e13fd05f7f50a8b', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:410) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:385) ~[mongodb-driver-core-3.11.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /172.23.0.2:27017
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:820) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2020-03-16 09:32:55.958  INFO 50628 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:32:55.959  INFO 50628 --- [Test worker] org.mongodb.driver.cluster               : Adding discovered server 172.23.0.2:27017 to client view of cluster
+2020-03-16 09:32:55.974  INFO 50628 --- [cluster-ClusterId{value='5e6faa375e13fd05f7f50a8c', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.11.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:339) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:603) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar:na]
+	... 3 common frames omitted
+
+2020-03-16 09:32:56.464  INFO 50628 --- [Test worker] r.crud.CrudApplicationTests              : Started CrudApplicationTests in 1.62 seconds (JVM running for 2.353)
+2020-03-16 09:35:11.755  INFO 50770 --- [Test worker] r.crud.CrudApplicationTests              : Starting CrudApplicationTests on PU-SNAIKAWADI with PID 50770 (started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:35:11.756  INFO 50770 --- [Test worker] r.crud.CrudApplicationTests              : No active profile set, falling back to default profiles: default
+2020-03-16 09:35:12.108  INFO 50770 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:35:12.200  INFO 50770 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:35:12.205  INFO 50770 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:35:12.207  INFO 50770 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:35:12.529  INFO 50770 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:35:12.620  INFO 50770 --- [cluster-ClusterId{value='5e6faac08aa47108500a394e', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:410) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:385) ~[mongodb-driver-core-3.11.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /172.23.0.2:27017
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:820) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2020-03-16 09:35:12.671  INFO 50770 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:35:12.671  INFO 50770 --- [Test worker] org.mongodb.driver.cluster               : Adding discovered server 172.23.0.2:27017 to client view of cluster
+2020-03-16 09:35:12.685  INFO 50770 --- [cluster-ClusterId{value='5e6faac08aa47108500a394f', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.11.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:339) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:603) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar:na]
+	... 3 common frames omitted
+
+2020-03-16 09:35:13.208  INFO 50770 --- [Test worker] r.crud.CrudApplicationTests              : Started CrudApplicationTests in 1.676 seconds (JVM running for 2.391)
+2020-03-16 09:38:30.816  INFO 50928 --- [Test worker] r.crud.CrudApplicationTests              : Starting CrudApplicationTests on PU-SNAIKAWADI with PID 50928 (started by sohel.naikawadi in /Users/sohel.naikawadi/Downloads/CrudDocker/crud)
+2020-03-16 09:38:30.817  INFO 50928 --- [Test worker] r.crud.CrudApplicationTests              : No active profile set, falling back to default profiles: default
+2020-03-16 09:38:31.184  INFO 50928 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2020-03-16 09:38:31.280  INFO 50928 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93ms. Found 1 Reactive MongoDB repository interfaces.
+2020-03-16 09:38:31.286  INFO 50928 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-03-16 09:38:31.288  INFO 50928 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 MongoDB repository interfaces.
+2020-03-16 09:38:31.609  INFO 50928 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:38:31.703  INFO 50928 --- [cluster-ClusterId{value='5e6fab875248c9374635fb15', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:410) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.connection.netty.NettyStream$OpenChannelFutureListener.operationComplete(NettyStream.java:385) ~[mongodb-driver-core-3.11.2.jar:na]
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:608) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:117) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: /172.23.0.2:27017
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:820) ~[na:na]
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.45.Final.jar:4.1.45.Final]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+
+2020-03-16 09:38:31.755  INFO 50928 --- [Test worker] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[172.23.0.2:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-03-16 09:38:31.755  INFO 50928 --- [Test worker] org.mongodb.driver.cluster               : Adding discovered server 172.23.0.2:27017 to client view of cluster
+2020-03-16 09:38:31.769  INFO 50928 --- [cluster-ClusterId{value='5e6fab875248c9374635fb16', description='null'}-172.23.0.2:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server 172.23.0.2:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117) ~[mongodb-driver-core-3.11.2.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:579) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:339) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:603) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-3.11.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-3.11.2.jar:na]
+	... 3 common frames omitted
+
+2020-03-16 09:38:32.304  INFO 50928 --- [Test worker] r.crud.CrudApplicationTests              : Started CrudApplicationTests in 1.712 seconds (JVM running for 2.459)

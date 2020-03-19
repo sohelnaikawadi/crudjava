@@ -1,0 +1,26 @@
+version: '3'
+services: 
+    person:
+        build: 
+            context: ./crud
+        networks: 
+            - java-mongo
+        depends_on: 
+            - mongo
+        ports: 
+            - '8080:8080'
+    mongo: 
+        image: mongo
+        restart: always
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+        volumes:
+            - ./database:/data
+        networks: 
+            - java-mongo
+        ports: 
+            - '27017:27017'
+
+networks: 
+    java-mongo:
